@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../../Training/Training/apache-jmeter-5.4.3/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../Training/Training/apache-jmeter-5.4.3/lib/ext" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../../Training/Training/apache-jmeter-5.4.3/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../../Training/Training/apache-jmeter-5.4.3/lib/ext" recursive="false" />
+  </library>
+</component>
