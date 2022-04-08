@@ -24,7 +24,7 @@ public class ChecksDemo extends Simulation {
                     ))
             .exec(session -> {
                 System.out.println(session.getString("url"));
-                System.out.println(session.getString("extract_title"));
+                System.out.println(session.getString("extract_title").trim());
                 System.out.println(session.getString("extract_products"));
                 return session;
             })
