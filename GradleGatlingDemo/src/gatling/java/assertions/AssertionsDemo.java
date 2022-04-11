@@ -12,19 +12,17 @@ public class AssertionsDemo extends Simulation {
 
     ScenarioBuilder myscenario = scenario("Online Boutique")
             .group("OnlineBoutique").on(
-                exec(http("T00_Home")
-                    .get("/")
-                    .check(
-                            status().is(200),
-                            status().in(200, 202), // Gatling will perform implicit check for 2XX or 304
-                            responseTimeInMillis().lte(3000)
+                    exec(http("T00_Home")
+                            .get("/")
+                            .check(
+                                    responseTimeInMillis().lte(3000)
                     ))
-                    .exec(http("T10_ProductPage")
-                        .get("/product/OLJCESPC7Z")
-                        .check(
-                                status().not(500)
-                        ))
-                    .pause(3)
+                            .exec(http("T10_ProductPage")
+                                    .get("/product/OLJCESPC7Z")
+                                    .check(
+                                            status().not(500)
+                                    ))
+                            .pause(3)
             );
 
     {
@@ -32,7 +30,7 @@ public class AssertionsDemo extends Simulation {
                 .protocols(req))
                 .assertions(global().responseTime().percentile3().lte(1000))    // for all requests - percentile3 => 95 - ms
                 .assertions(forAll().responseTime().max().lte(1500))            // stats for individual requests - max response time in ms
-                .assertions(global().failedRequests().percent().lte(0.01))       // global failed requests percentage < 0.01%
+                .assertions(forAll().failedRequests().percent().lte(0.01))       // for all failed requests percentage < 0.01%
                 .assertions(details("OnlineBoutique").responseTime().mean().lte(800)   // group - response time mean <800 ms
         );
 
