@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="TEMP_LOG_LOCATION" value="C://temp//" />
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+        </encoder>
+        <immediateFlush>false</immediateFlush>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${TEMP_LOG_LOCATION}/gatling.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+        </encoder>
+    </appender>
+
+    <!-- uncomment and set to DEBUG to log all failing HTTP requests -->
+    <!-- uncomment and set to TRACE to log all HTTP requests -->
+    <logger name="io.gatling.http.ahc" level="TRACE" />
+    <logger name="io.gatling.http.response" level="TRACE" />
+
+    <!-- uncomment to log WebSocket events -->
+    <!--<logger name="io.gatling.http.action.ws.fsm" level="DEBUG" />-->
+
+    <!-- uncomment to log SSE events -->
+    <!--<logger name="io.gatling.http.action.sse.fsm" level="DEBUG" />-->
+    <root level="TRACE">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <root level="TRACE">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
