@@ -16,9 +16,8 @@ public class FeedersDemo extends Simulation {
 
     HttpProtocolBuilder httpProtocol = http
             .proxy(
-                    new Proxy("localhost", 8888)
+                    new Proxy("http://localhost", 8888)
             )
-            .noProxyFor("www.github.com")
             .baseUrl("https://onlineboutique.dev");
 
     ScenarioBuilder myscenario = scenario("OnlineBoutique Home Page")
