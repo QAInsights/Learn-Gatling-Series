@@ -1,1 +1,1 @@
-gradlew gatlingRun-config.ConfigDemo
+gradlew gatlingRun-feeders.FeedersDemo
