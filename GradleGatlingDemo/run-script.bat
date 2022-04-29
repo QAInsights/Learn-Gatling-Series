@@ -1,1 +1,1 @@
-gradlew gatlingRun-feeders.FeedersDemo
+gradlew gatlingRun-correlation.CorrelationDemo
