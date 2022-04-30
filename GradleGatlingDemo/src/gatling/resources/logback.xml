@@ -18,15 +18,15 @@
 
     <!-- uncomment and set to DEBUG to log all failing HTTP requests -->
     <!-- uncomment and set to TRACE to log all HTTP requests -->
-    <logger name="io.gatling.http.ahc" level="TRACE" />
-    <logger name="io.gatling.http.response" level="TRACE" />
+    <logger name="io.gatling.http.ahc" level="INFO" />
+    <logger name="io.gatling.http.response" level="INFO" />
 
     <!-- uncomment to log WebSocket events -->
     <!--<logger name="io.gatling.http.action.ws.fsm" level="DEBUG" />-->
 
     <!-- uncomment to log SSE events -->
     <!--<logger name="io.gatling.http.action.sse.fsm" level="DEBUG" />-->
-    <root level="TRACE">
+    <root level="INFO">
         <appender-ref ref="CONSOLE" />
     </root>
 
